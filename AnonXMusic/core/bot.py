@@ -10,7 +10,7 @@ class Anony(Client):
     def __init__(self):
         LOGGER(__name__).info(f"Starting Bot...")
         super().__init__(
-            name="AnonXMusic",
+            name="ᴋɪɴɢ✘ʀᴏʙᴏᴛ",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             bot_token=config.BOT_TOKEN,
@@ -29,26 +29,26 @@ class Anony(Client):
         try:
             await self.send_message(
                 chat_id=config.LOGGER_ID,
-                text=f"<u><b>» {self.mention} ʙᴏᴛ sᴛᴀʀᴛᴇᴅ :</b><u>\n\nɪᴅ : <code>{self.id}</code>\nɴᴀᴍᴇ : {self.name}\nᴜsᴇʀɴᴀᴍᴇ : @{self.username}",
+                text=f"<u><b>» ᴋɪɴɢ ᴍᴜsɪᴄ + ᴍᴀɴᴀɢᴇ ᴀᴄᴛɪᴠᴀᴛᴇᴅ ᴍᴇᴋ! 🔥",
             )
         except (errors.ChannelInvalid, errors.PeerIdInvalid):
             LOGGER(__name__).error(
-                "Bot has failed to access the log group/channel. Make sure that you have added your bot to your log group/channel."
+                "ʙᴏᴛ ɢᴀɢᴀʟ ᴀᴄᴄᴇs ʟᴏɢ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ. ʟᴜ ᴛᴀᴍʙᴀʜɪɴ ᴅᴜʟᴜ ʙᴏᴛ ᴋᴇ ʟᴏɢ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ ʟᴜ."
             )
             exit()
         except Exception as ex:
             LOGGER(__name__).error(
-                f"Bot has failed to access the log group/channel.\n  Reason : {type(ex).__name__}."
+                f"ʙᴏᴛ ɢᴀɢᴀʟ ᴀᴄᴄᴇs ʟᴏɢ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ.\n  Reason : {type(ex).__name__}."
             )
             exit()
 
         a = await self.get_chat_member(config.LOGGER_ID, self.id)
         if a.status != ChatMemberStatus.ADMINISTRATOR:
             LOGGER(__name__).error(
-                "Please promote your bot as an admin in your log group/channel."
+                "ᴀᴅᴍɪɴɪɴ ᴅᴜʟᴜ ɴɢᴇɴᴛᴏᴛ ʙᴏᴛ ɴʏᴀ ᴅɪ ʟᴏɢ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ ʟᴜ."
             )
             exit()
-        LOGGER(__name__).info(f"Music Bot Started as {self.name}")
+        LOGGER(__name__).info(f"ᴀssɪsᴛᴀɴᴛ ᴋɪɴɢ ᴍᴜsɪᴄ sᴛᴀʀᴛᴇᴅ ᴀs{self.name}")
 
     async def stop(self):
         await super().stop()
